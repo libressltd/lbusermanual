@@ -1,0 +1,25 @@
+{
+    "name": "libressltd/lbusermanual",
+    "description": "Push notification center",
+    "type": "library",
+    "require": {
+        "libressltd/lbsa": "*",
+        "libressltd/lbform": "*",
+        "alsofronie/eloquent-uuid": "*",
+        "libressltd/lbmediacenter": "*"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "LIBRE SS Ltd",
+            "email": "contact@libreteam.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "LIBRESSLtd\\LBUserManual\\": "src/"
+        },
+        "classmap": ["src/controllers"]
+    },
+    "minimum-stability": "dev"
+}
