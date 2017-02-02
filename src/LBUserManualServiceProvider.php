@@ -36,6 +36,6 @@ class LBUserManualServiceProvider extends ServiceProvider
         
         $this->app->make('LIBRESSLtd\LBUserManual\Controllers\Ajax\LBUM_documentController');
         $this->app->make('LIBRESSLtd\LBUserManual\Controllers\Ajax\LBUM_documentFunctionController');
-        $this->app->make('LIBRESSLtd\LBUserManual\Controllers\Ajax\LBUM_FunctionStepController');
+        $this->app->make('LIBRESSLtd\LBUserManual\Controllers\Ajax\LBUM_functionStepController');
     }
 }
