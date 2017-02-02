@@ -8,6 +8,17 @@ active
 active
 @endsection
 
+@push('ribbon')
+
+<ol class="breadcrumb">
+    <li><a href="/lbum/document">LBUserGuide</a></li>
+    <li><a href="/lbum/document/{{ $function->document->id }}/function">{{ $function->document->name }}</a></li>
+    <li><a href="/lbum/function/{{ $function->id }}/step">{{ $function->name }}</a></li>
+    <li>Step</li>
+</ol>
+
+@endpush
+
 @section('content')
 <div class="row">
     <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">

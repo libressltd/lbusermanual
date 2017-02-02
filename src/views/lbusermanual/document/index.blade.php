@@ -8,6 +8,14 @@ active
 active
 @endsection
 
+@push('ribbon')
+
+<ol class="breadcrumb">
+    <li>LBUserGuide</li>
+</ol>
+
+@endpush
+
 @section('content')
 <div class="row">
     <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">

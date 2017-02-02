@@ -8,6 +8,22 @@ active
 active
 @endsection
 
+@push('ribbon')
+
+<ol class="breadcrumb">
+    <li><a href="/lbum/document">LBUserGuide</a></li>
+    <li><a href="/lbum/document/{{ $function->document->id }}/function">{{ $function->document->name }}</a></li>
+    <li><a href="/lbum/function/{{ $function->id }}/step">{{ $function->name }}</a></li>
+    @if (isset($step))
+    <li>{{ $step->name }}</li>
+    <li>Edit</li>
+    @else
+    <li>Add new step</li>
+    @endif
+</ol>
+
+@endpush
+
 @section('content')
 <div class="row">
     <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
@@ -22,19 +38,15 @@ active
 </div>
 
 <section id="widget-grid" class="">
+    @if (isset($step))
+    {!! Form::open(["url" => "/lbum/function/$function->id/step/$step->id", "method" => "put", "files" => true]) !!}
+    @else
+    {!! Form::open(["url" => "/lbum/function/$function->id/step", "method" => "post", "files" => true]) !!}
+    @endif
     <div class="row">
-        <article class="col-lg-12">
-            <div class="jarviswidget" id="wid-id-1" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-custombutton="false">
-                <header>
-                    <span class="widget-icon"> <i class="fa fa-edit"></i> </span>
-                    <h2>{{ trans("lbum.step.list.title") }} </h2>
-                </header>
+        <article class="col-lg-8">
+            @box_open(trans("lbum.step.list.title"))
                 <div>
-                    @if (isset($step))
-                    {!! Form::open(["url" => "/lbum/function/$function->id/step/$step->id", "method" => "put", "files" => true]) !!}
-                    @else
-                    {!! Form::open(["url" => "/lbum/function/$function->id/step", "method" => "post", "files" => true]) !!}
-                    @endif
                     <div class="widget-body">
                         {!! Form::lbText("name_en", @$step->name_en, "Name en") !!}
                         {!! Form::lbText("name_vi", @$step->name_vi, "Name vi") !!}
@@ -42,17 +54,43 @@ active
                         {!! Form::lbText("note_vi", @$step->note_vi, "Note vi") !!}
 
                         {!! Form::lbText("order_number", @$step->order_number, "Order Number") !!}
+                        <div class="widget-footer">
+                            {!! Form::lbSubmit() !!}
+                        </div>
+                    </div>
+                </div>
+            @box_close
+        </article>
+        <article class="col-lg-4">
+            @box_open("Image EN")
+                <div>
+                    <div class="widget-body">
+                        @if (isset($step) && $step->image_en_id)
+                            <img src="/lbmedia/{{ $step->image_en_id }}" style="width: 100%"/>
+                        @endif
                         {!! Form::file("image_en") !!}
+                        <div class="widget-footer">
+                            {!! Form::lbSubmit() !!}
+                        </div>
+                    </div>
+                </div>
+            @box_close
+            @box_open("Image VI")
+                <div>
+                    <div class="widget-body">
+                        @if (isset($step) && $step->image_vi_id)
+                            <img src="/lbmedia/{{ $step->image_vi_id }}" style="width: 100%"/>
+                        @endif
                         {!! Form::file("image_vi") !!}
                         <div class="widget-footer">
                             {!! Form::lbSubmit() !!}
                         </div>
                     </div>
-                    {!! Form::close() !!}
                 </div>
-            </div>
+            @box_close
         </article>
     </div>
+    {!! Form::close() !!}
 </section>
 
 @endsection
