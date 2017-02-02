@@ -32,7 +32,7 @@ class LBUserManualServiceProvider extends ServiceProvider
         $this->app->make('LIBRESSLtd\LBUserManual\Controllers\LBUM_generateController');
         $this->app->make('LIBRESSLtd\LBUserManual\Controllers\LBUM_documentController');
         $this->app->make('LIBRESSLtd\LBUserManual\Controllers\LBUM_documentFunctionController');
-        $this->app->make('LIBRESSLtd\LBUserManual\Controllers\LBUM_FunctionStepController');
+        $this->app->make('LIBRESSLtd\LBUserManual\Controllers\LBUM_functionStepController');
         
         $this->app->make('LIBRESSLtd\LBUserManual\Controllers\Ajax\LBUM_documentController');
         $this->app->make('LIBRESSLtd\LBUserManual\Controllers\Ajax\LBUM_documentFunctionController');
