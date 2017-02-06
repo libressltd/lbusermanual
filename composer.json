@@ -6,7 +6,8 @@
         "libressltd/lbsa": "*",
         "libressltd/lbform": "*",
         "alsofronie/eloquent-uuid": "*",
-        "libressltd/lbmediacenter": "*"
+        "libressltd/lbmediacenter": "*",
+        "phpoffice/phpword": "*"
     },
     "license": "MIT",
     "authors": [
