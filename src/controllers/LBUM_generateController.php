@@ -16,7 +16,14 @@ class LBUM_generateController extends Controller
     public function index()
     {
         $doc = LBUM_document::find(1);
-        $doc->generate();
+        if (request()->has("lang"))
+        {
+            $doc->generate(request()->lang);
+        }
+        else
+        {
+            $doc->generate();
+        }
     }
 
     /**
