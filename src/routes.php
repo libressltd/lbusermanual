@@ -3,7 +3,7 @@
 use Symfony\Component\Process\Process;
 use Symfony\Component\Process\Exception\ProcessFailedException;
 
-Route::group(["prefix" => "lbum", "namespace" => "libressltd\lbusermanual\controllers"], function(){
+Route::group(["prefix" => "lbum", "namespace" => "libressltd\lbusermanual\controllers", "middleware" => ["web", "auth"]], function(){
 
 	Route::get("/", function() {
 		$process = new Process('php artisan vendor:publish --tag=lbusermanual --force');
