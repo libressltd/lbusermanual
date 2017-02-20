@@ -53,9 +53,9 @@ active
                     <div class="widget-body">
                         {!! Form::lbText("name_en", @$function->name_en, "Name en") !!}
                         {!! Form::lbText("name_vi", @$function->name_vi, "Name vi") !!}
-                        {!! Form::lbText("description_en", @$function->name_en, "Description en") !!}
-                        {!! Form::lbText("description_en", @$function->name_vi, "Description vi") !!}
-                        {!! Form::lbSelect2("parent_id", -1, App\Models\LBUM_function::toOption("name_vi"), "Parent") !!}
+                        {!! Form::lbText("description_en", @$function->description_en, "Description en") !!}
+                        {!! Form::lbText("description_en", @$function->description_vi, "Description vi") !!}
+                        {!! Form::lbSelect2("parent_id", -1, $document->functions()->toOption("name_vi"), "Parent") !!}
 
                         {!! Form::lbText("order_number", @$function->order_number, "Order Number") !!}
                         {!! Form::file("image_en") !!}

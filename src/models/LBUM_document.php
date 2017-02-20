@@ -105,7 +105,7 @@ class LBUM_document extends Model
     
     public function getGenerateButtonAttribute()
     {
-        return Form::lbButton("/lbum/document/$this->id", "GET", "Generate", ["class" => "btn btn-xs btn-info"])->toHtml();
+        return Form::lbButton("/lbum/document/$this->id?lang=en", "GET", "Generate en", ["class" => "btn btn-xs btn-info"])->toHtml().Form::lbButton("/lbum/document/$this->id?lang=vi", "GET", "Generate vi", ["class" => "btn btn-xs btn-info"])->toHtml().;
     }
     
     public function getFunctionButtonAttribute()
