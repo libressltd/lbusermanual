@@ -15,12 +15,24 @@ class LBUM_function extends Model
     use LBDatatableTrait, Uuid32ModelTrait;
     protected $table = "LBUM_functions";
 
-    protected $fillable = ["name_en", "name_vi", "description_en", "description_vi", "parent_id", "order_number"];
+    protected $fillable = ["name_en", "name_vi", "description_en", "description_vi", "parent_id", "order_number", "order_text"];
     protected $appends = ["edit_button", "step_button"];
 
     public function getEditButtonAttribute()
     {
         return Form::lbButton("/lbum/document/$this->document_id/function/$this->id/edit", "GET", "Edit", ["class" => "btn btn-xs btn-primary"])->toHtml();
+    }
+
+    public function getOrderTextAttribute()
+    {
+        if (is_null($this->parent_id))
+        {
+            return $this->order_number;
+        }
+        else
+        {
+            return $this->parent->order_text.".".$this->order_number;
+        }
     }
 
     public function getStepButtonAttribute()

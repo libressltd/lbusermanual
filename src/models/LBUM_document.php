@@ -55,12 +55,12 @@ class LBUM_document extends Model
                 )
             )
         );
-        $phpWord->addTitleStyle(1, array('name' => 'Calibri', 'size' => 14, 'bold' => true, 'color' => '0B5294'), array('numStyle' => 'hNum', 'numLevel' => 0));
-        $phpWord->addTitleStyle(2, array('name' => 'Calibri', 'size' => 13, 'bold' => true, 'color' => '0F6FC6'), array('numStyle' => 'hNum', 'numLevel' => 1));
-        $phpWord->addTitleStyle(3, array('name' => 'Tohoma', 'size' => 12, 'color' => '073662'), array('numStyle' => 'hNum', 'numLevel' => 2));
+        $phpWord->addTitleStyle(1, array('name' => 'TimesNewRoman', 'size' => 16, 'bold' => true, 'color' => '0B5294'), array('numStyle' => 'hNum', 'numLevel' => 0));
+        $phpWord->addTitleStyle(2, array('name' => 'TimesNewRoman', 'size' => 14, 'bold' => true, 'color' => '0F6FC6'), array('numStyle' => 'hNum', 'numLevel' => 1));
+        $phpWord->addTitleStyle(3, array('name' => 'TimesNewRoman', 'size' => 13, 'bold' => true 'color' => '073662'), array('numStyle' => 'hNum', 'numLevel' => 2));
 
-        $phpWord->setDefaultFontName('Tahoma');
-        $phpWord->setDefaultFontSize(12);
+        $phpWord->setDefaultFontName('TimesNewRoman');
+        $phpWord->setDefaultFontSize(13);
     }
 
     public function print_function($function, $section, $index)

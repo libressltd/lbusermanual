@@ -48,10 +48,10 @@ active
             @box_open(trans("lbum.step.list.title"))
                 <div>
                     <div class="widget-body">
-                        {!! Form::lbText("name_en", @$step->name_en, "Name en") !!}
-                        {!! Form::lbText("name_vi", @$step->name_vi, "Name vi") !!}
-                        {!! Form::lbText("note_en", @$step->note_en, "Note en") !!}
-                        {!! Form::lbText("note_vi", @$step->note_vi, "Note vi") !!}
+                        {!! Form::lbTextarea("name_en", @$step->name_en, "Name en") !!}
+                        {!! Form::lbTextarea("name_vi", @$step->name_vi, "Name vi") !!}
+                        {!! Form::lbTextarea("note_en", @$step->note_en, "Note en") !!}
+                        {!! Form::lbTextarea("note_vi", @$step->note_vi, "Note vi") !!}
 
                         {!! Form::lbText("order_number", @$step->order_number, "Order Number") !!}
                         <div class="widget-footer">
